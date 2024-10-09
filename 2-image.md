@@ -4,7 +4,7 @@ Es un archivo único que contiene todos los programas, librerías, dependencias 
 
 
 ## ¿Cuál es la relación entre una imagen y un contenedor? 
-# COMPLETAR 
+Una imagen en una base para poder crear el contenedor, es decir, se puede usar una misma imagen para tener distintos contenedores.
 
 ![Imagen y contenedores](img/imagenContenedores.JPG)
 ## Comandos para imágenes
@@ -24,13 +24,17 @@ docker pull <nombre imagen>:<tag>
 ```
 
 Descargar la imagen **hello-world**
-# COMPLETAR
+``` yml
+docker pull hello-world
+```
 
-**¿Qué es nginx**
-# COMPLETAR 
+**¿Qué es nginx?**
+> Servidor web de código abierto y de alta performance
 
 Descargar la imagen  **nginx** en la versión **alpine**
-# COMPLETAR
+``` yml
+docker pull nginx:alpine
+```
 
 ### Listar imágenes
 
@@ -38,7 +42,7 @@ Descargar la imagen  **nginx** en la versión **alpine**
 docker images
 ```
 
-# COLOCAR UNA CAPTURA DE PANTALLA DEL RESULTADO 
+ ![Lista de imagenes descargadas](img/docker-images.png)
 
 **Identificadores**
 
@@ -53,10 +57,12 @@ docker inspect <nombre imagen>:<tag>
 ```
 
 Inspeccionar la imagen hello-world 
-# COMPLETAR
+```yml
+docker inspect hello-world
+```
 
-**¿Con qué algoritmo se está generando el ID de la imagen**
-# COMPLETAR
+**¿Con qué algoritmo se está generando el ID de la imagen?**
+>  Se puede inferir que el ID de la imagen Docker se basa en la suma de hash (SHA-256) de los datos de la imagen.
 
 ### Filtrar imágenes
 
@@ -73,7 +79,9 @@ docker rmi <nombre imagen>:<tag>
 ```
 
 Eliminar la imagen hello-world 
-# COMPLETAR
+```yml
+docker rmi hello-world:latest
+```
 
 -f: Es la opción para forzar la eliminación de la imagen incluso si hay contenedores en ejecución que utilizan esa imagen.
 Cuando eliminas una imagen Docker, Docker no elimina automáticamente los contenedores que se han creado a partir de esa imagen. Esto significa que, aunque hayas eliminado la imagen, el contenedor seguirá ejecutándose normalmente.  

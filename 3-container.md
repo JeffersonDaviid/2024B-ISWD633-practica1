@@ -7,12 +7,16 @@ Para crear un nuevo contenedor Docker a partir de una imagen específica, pero s
 docker create --name <nombre contenedor> <nombre imagen>:<tag>
 ```
 Crear el contenedor  **srv-web** usando la imagen nginx version alpine
-# COMPLETAR
+```yml
+docker create --name srv-web nginx:alpine
+```
 
 Si creas un contenedor en Docker sin asignarle un nombre específico utilizando la opción --name, Docker asignará automáticamente un nombre aleatorio al contenedor. Este nombre suele consistir en una combinación de palabras y números.  
 
 Crear el contenedor usando la imagen hello-world
-# COMPLETAR
+```yml
+docker create --name holamundo hello-world
+```
 
 ### Listar los contenedores ejecutándose o no
 
@@ -26,7 +30,9 @@ docker ps -a
 docker start <nombre contenedor o identificador>
 ```
 Iniciar el contenedor srv-web 
-# COMPLETAR
+```yml
+docker start srv-web
+```
 
 ### Listar los contenedores ejecutándose
 ```
@@ -48,10 +54,12 @@ docker run --name <nombre contenedor> <nombre imagen>:<tag>
 ![Ecosistema de Docker](img/dockerRun.PNG)
 
 Crear y ejecutar inmediatamente el contenedor **srv-web2** usando la imagen nginx:alpine
-# COMPLETAR
+```yml
+docker run --name srv-web2 nginx:alpine
+```
 
 **¿Qué sucede luego de la ejecución del comando?**
-# COMPLETAR  
+> Se ejecuta el contenedor e inicia el servicio
 
 Cuando ejecutas un contenedor en primer plano sin la opción -d (modo detach), el contenedor captura la entrada estándar (stdin) del terminal, lo que significa que el terminal queda "atrapado" y no puedes introducir más comandos hasta que detengas el contenedor.
 
